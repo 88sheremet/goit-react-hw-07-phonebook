@@ -1,38 +1,48 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { nanoid } from 'nanoid';
+import { deleteContact, fetchContacts } from './operations';
 
-const contactsInitialState = [
-  { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-  { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-  { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-  { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-];
+const initialState = {
+  contacts: {
+    items: [],
+    isLoading: false,
+    error: null,
+  },
+};
 
 const contactSlice = createSlice({
   name: 'contacts',
-  initialState: {
-    contacts: contactsInitialState,
-  },
-  reducers: {
-    addContactAction: {
-      reducer(state, action) {
-        state.contacts.push(action.payload);
-      },
-      prepare(contact) {
-        return {
-          payload: {
-            ...contact,
-            id: nanoid(),
-          },
-        };
-      },
-    },
-    deleteContactAction(state, action) {
-      const index = state.contacts.findIndex(
-        task => task.id === action.payload
-      );
-      state.contacts.splice(index, 1);
-    },
+  initialState,
+  extraReducers: builder => {
+    builder
+      .addCase(fetchContacts.pending, (state, action) => {
+        state.contacts.isLoading = true;
+      })
+      .addCase(fetchContacts.fulfilled, (state, action) => {
+        console.log(action)
+        state.contacts.isLoading = false;
+        state.contacts.error = null;
+        state.contacts.items = action.payload;
+      })
+      .addCase(fetchContacts.rejected, (state, action) => {
+        state.contacts.isLoading = false;
+        state.contacts.error = action.payload.message;
+      })
+      .addCase(deleteContact.pending, (state)=>{
+        state.contacts.isLoading = true;
+      })
+      .addCase(deleteContact.fulfilled, (state, action)=>{
+        state.contacts.isLoading = false;
+        state.contacts.error = null;
+      })
+      .addCase(deleteContact.rejected, (state, action) => {
+        state.contacts.isLoading = false;
+        state.contacts.error = action.payload.message;
+        state.contacts.items = state.contacts.items.filter((item)=>{ return item.id !== action.payload})
+        // const index = state.contacts.items.findIndex(
+        //   contact => contact.id === action.payload
+        // );
+        // state.contacts.items.splice(index, 1);
+      })
   },
 });
 

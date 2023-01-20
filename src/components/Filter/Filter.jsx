@@ -10,7 +10,7 @@ export const Filter = () => {
   };
 
   return (
-    <>
+    <div>
       <label>
         Find contacts by name
         <input
@@ -20,6 +20,6 @@ export const Filter = () => {
           onChange={onChangeFilter}
         />
       </label>
-    </>
+    </div>
   );
 };

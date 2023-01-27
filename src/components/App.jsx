@@ -1,3 +1,4 @@
+import CalculatorCalorieForm from 'Calculate';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
@@ -16,14 +17,15 @@ export const App = () => {
 
   return (
     <>
-      <div>
+      {/* <div>
         <h1>Phonebook:</h1>
         <ContactForm />
 
         <h2>Contacts:</h2>
         <Filter />
         {loader ? <Loader /> : <ContactList />}
-      </div>
+      </div> */}
+      <CalculatorCalorieForm/>
     </>
   );
 };

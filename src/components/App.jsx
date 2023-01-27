@@ -1,15 +1,15 @@
 import CalculatorCalorieForm from 'Calculate';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { fetchContacts } from 'redux/operations';
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
-import { Loader } from './Loader/Loader';
+// import { ContactForm } from './ContactForm/ContactForm';
+// import { ContactList } from './ContactList/ContactList';
+// import { Filter } from './Filter/Filter';
+// import { Loader } from './Loader/Loader';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const loader = useSelector(state => state.contacts.contacts.isLoading);
+  // const loader = useSelector(state => state.contacts.contacts.isLoading);
 
   useEffect(() => {
     dispatch(fetchContacts());

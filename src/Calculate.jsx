@@ -22,8 +22,8 @@ const calculateDailyRate = createAsyncThunk(
 const CalculatorCalorieForm = () => {
   const [form, setForm] = useState({
     height: '',
-    currentWeight: '',
     age: '',
+    weight: '',
     desiredWeight: '',
     bloodType: '',
   });
@@ -43,8 +43,9 @@ const CalculatorCalorieForm = () => {
 
     const formData = {
       height: e.target.elements.height.value,
-      currentWeight: e.target.elements.currentWeight.value,
+
       age: e.target.elements.age.value,
+      weight: e.target.elements.weight.value,
       desiredWeight: e.target.elements.desiredWeight.value,
       bloodType: e.target.elements.bloodType.value,
     };
@@ -53,7 +54,7 @@ const CalculatorCalorieForm = () => {
     dispatch(calculateDailyRate(formData));
     setForm({
       height: '',
-      currentWeight: '',
+      weight: '',
       age: '',
       desiredWeight: '',
       bloodType: '',
@@ -76,21 +77,20 @@ const CalculatorCalorieForm = () => {
               required
               //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             />
-
             <Input
               type="text"
-              name="currentWeight"
+              name="age"
               placeholder="Age *"
-              value={form.currentWeight}
+              value={form.age}
               onChange={onChange}
               required
               //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             />
             <Input
               type="text"
-              name="age"
-              placeholder="Current weight *"
-              value={form.age}
+              name="weight"
+              placeholder="Current weight*"
+              value={form.weight}
               onChange={onChange}
               required
               //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -191,6 +191,7 @@ const Title = styled.h1`
 `;
 
 const Form = styled.div`
+  padding: 0;
   display: flex;
   flex-direction: column;
   row-gap: 32px;
@@ -238,6 +239,7 @@ const RadioButtonDiv = styled.div`
   input {
     cursor: pointer;
     width: 40px;
+
     opacity: 0;
     position: absolute;
   }
@@ -245,14 +247,13 @@ const RadioButtonDiv = styled.div`
     & + label::before {
       display: flex;
       justify-content: center;
-      text-align: center;
+
       align-items: center;
       content: '⬤';
-      /* width: 10px; */
+
       width: 20px;
       height: 20px;
       border: 1px solid #e0e0e0;
-      /* background-color: #fc842d; */
     }
     & + label {
       color: #fc842d;

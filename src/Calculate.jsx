@@ -243,11 +243,16 @@ const RadioButtonDiv = styled.div`
   }
   input:checked {
     & + label::before {
-      content: '';
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      content: '⬤';
+      /* width: 10px; */
       width: 20px;
       height: 20px;
-      /* padding: 5px; */
-      background-color: #fc842d;
+      border: 1px solid #e0e0e0;
+      /* background-color: #fc842d; */
     }
     & + label {
       color: #fc842d;

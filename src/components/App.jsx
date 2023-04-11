@@ -1,4 +1,5 @@
-import {DailyCaloriesForm} from 'Calculate';
+// import {DailyCaloriesForm} from 'Calculate';
+import { RegisterLK } from 'RegisterLK';
 import { useEffect } from 'react';
 import { useDispatch} from 'react-redux';
 import { fetchContacts } from 'redux/operations';
@@ -25,7 +26,8 @@ export const App = () => {
         <Filter />
         {loader ? <Loader /> : <ContactList />}
       </div> */}
-      <DailyCaloriesForm/>
+      {/* <DailyCaloriesForm/> */}
+      <RegisterLK></RegisterLK>
     </>
   );
 };

@@ -1,5 +1,7 @@
 // import {DailyCaloriesForm} from 'Calculate';
+import { RegisterForOwner } from 'RegisterForOwner';
 import { RegisterLK } from 'RegisterLK';
+import { RegisterProvider } from 'RegisterProvider';
 import { useEffect } from 'react';
 import { useDispatch} from 'react-redux';
 import { fetchContacts } from 'redux/operations';
@@ -28,6 +30,8 @@ export const App = () => {
       </div> */}
       {/* <DailyCaloriesForm/> */}
       <RegisterLK></RegisterLK>
+      {/* <RegisterForOwner></RegisterForOwner> */}
+      {/* <RegisterProvider></RegisterProvider> */}
     </>
   );
 };

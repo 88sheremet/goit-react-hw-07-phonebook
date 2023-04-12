@@ -104,6 +104,11 @@ const InputContainer = styled.div`
   border: 1px solid #e8e8e8;
   border-radius: 10px;
 
+&:hover{
+  border: 1px solid #E8E8E8;
+box-shadow: 0px 2px 6px 2px rgba(232, 232, 232, 0.5);
+}
+
   label {
     cursor: pointer;
 

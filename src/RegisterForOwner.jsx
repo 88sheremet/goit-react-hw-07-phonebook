@@ -8,7 +8,7 @@ export const RegisterForOwner = () => {
       <FormContainer>
         <img src={svgLogo} alt="" />
         <h1>Реєстрація</h1>
-        <p>Зареструйтесь всього у декілька кроків</p>
+        <p>Зареєструйтесь всього у декілька кроків</p>
       </FormContainer>
 
       <List>

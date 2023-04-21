@@ -50,7 +50,7 @@ export const RegisterForOwner = () => {
 
 const Container = styled.div`
   @media (max-width: 780px) {
-    padding: 31px 16px 16px 16px;
+    padding: 31px 16px 56px 16px;
   }
   @media (min-width: 1280px) {
     padding: 65px 40px 109px 150px;

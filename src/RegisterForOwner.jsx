@@ -3,7 +3,6 @@ import svgLogo from '../src/images/LogoRegisterLK.svg';
 import LogoImg from '../src/images/RegisterForOwnerDesktop.png';
 import eye from '../src/images/eye.svg';
 export const RegisterForOwner = () => {
-
   return (
     <Container>
       <FormContainer>
@@ -18,7 +17,7 @@ export const RegisterForOwner = () => {
           <input type="text" placeholder="Введіть назву вашого закладу" />
         </li>
         <li>
-          <label>Номер вашего телефона</label>
+          <label>Номер вашого телефону</label>
           <input type="number" placeholder="+380" />
         </li>
         <li>
@@ -50,42 +49,81 @@ export const RegisterForOwner = () => {
 };
 
 const Container = styled.div`
-  padding: 65px 40px 109px 150px;
-  background-image: url('${LogoImg}');
-  background-repeat: no-repeat;
-  background-position: right;
+  @media (max-width: 780px) {
+    padding: 31px 16px 16px 16px;
+  }
+  @media (min-width: 1280px) {
+    padding: 65px 40px 109px 150px;
+    background-image: url('${LogoImg}');
+    background-repeat: no-repeat;
+    background-position: right;
+  }
 `;
 
 const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 480px;
-  gap: 20px;
-  img {
-    display: block;
-    width: 136.23px;
-    height: 29.98px;
+  @media (max-width: 780px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    width: 375px;
+    img {
+      display: block;
+      width: 104.27px;
+      height: 22.71px;
+    }
+    h1 {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 33px;
+      margin: 0;
+    }
+    p {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: rgba(34, 34, 34, 0.5);
+      margin: 0;
+      margin-bottom: 22px;
+    }
   }
-  h1 {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 48px;
-    line-height: 66px;
-    color: #222222;
-    margin: 0;
-  }
-  p {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    color: rgba(34, 34, 34, 0.5);
-    margin: 0;
-    margin-bottom: 68px;
+
+  @media (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    gap: 20px;
+    img {
+      display: block;
+      width: 136.23px;
+      height: 29.98px;
+    }
+    h1 {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 66px;
+      color: #222222;
+      margin: 0;
+    }
+    p {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: rgba(34, 34, 34, 0.5);
+      margin: 0;
+      margin-bottom: 68px;
+    }
   }
 `;
 
@@ -93,83 +131,168 @@ const List = styled.ul`
   padding: 0;
   margin: 0;
 
-  li {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 14px;
-  }
+  @media (max-width: 780px) {
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
 
-  label {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22px;
-    color: #181818;
-  }
-  input {
-    width: 480px;
-    height: 58px;
-    border-radius: 10px;
-    border: 1px solid #e8e8e8;
-    padding-left: 18px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    /* outline: 1px solid #FFA451; */
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 19px;
-    color: #181818;
-  }
-  input:focus,
-  input:active, input:hover {
-    outline: 1px solid #ffa451;
-  }
+    label {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 22px;
+      color: #181818;
+    }
+    input {
+      width: 343px;
+      height: 58px;
+      border-radius: 10px;
+      border: 1px solid #e8e8e8;
+      padding-left: 18px;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      /* outline: 1px solid #FFA451; */
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+      color: #181818;
+    }
+    input:focus,
+    input:active,
+    input:hover {
+      outline: 1px solid #ffa451;
+    }
 
-  p {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    margin: 0;
-    color: #787878;
-  }
+    p {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      margin: 0;
+      color: #787878;
+    }
 
-  span{
-    position: absolute;
-    margin-left: 435px;
-    margin-top: 52px;
+    span {
+      position: absolute;
+      margin-left: 295px;
+      margin-top: 52px;
+    }
+  }
+  @media (min-width: 1280px) {
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    label {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 22px;
+      color: #181818;
+    }
+    input {
+      width: 480px;
+      height: 58px;
+      border-radius: 10px;
+      border: 1px solid #e8e8e8;
+      padding-left: 18px;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      /* outline: 1px solid #FFA451; */
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+      color: #181818;
+    }
+    input:focus,
+    input:active,
+    input:hover {
+      outline: 1px solid #ffa451;
+    }
+
+    p {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      margin: 0;
+      color: #787878;
+    }
+
+    span {
+      position: absolute;
+      margin-left: 435px;
+      margin-top: 52px;
+    }
   }
 `;
 
 const ComeInContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  /* gap: 8px; */
-  padding: 0;
-  width: 480px;
-  p {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
-    color: #787878;
-    margin-bottom: 24px;
+  @media (max-width: 780px) {
+    display: flex;
+    flex-direction: column;
+    /* gap: 8px; */
+    padding: 0;
+    width: 343px;
+    p {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: #787878;
+      margin-bottom: 24px;
+    }
+    button {
+      background-color: #ffa451;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 22px;
+      color: #ffffff;
+      height: 62px;
+      border: #ffa451;
+    }
   }
-  button {
-    background-color: #ffa451;
-    border-radius: 10px;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 22px;
-    color: #ffffff;
-    height: 62px;
-    border: #ffa451;
+  @media (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+    /* gap: 8px; */
+    padding: 0;
+    width: 480px;
+    p {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: #787878;
+      margin-bottom: 24px;
+    }
+    button {
+      background-color: #ffa451;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 22px;
+      color: #ffffff;
+      height: 62px;
+      border: #ffa451;
+    }
   }
 `;
 
